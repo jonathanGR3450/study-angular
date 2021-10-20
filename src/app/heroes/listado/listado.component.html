@@ -1,0 +1,16 @@
+<p>Listado de heroes</p>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index;">
+        {{ i + 1 }} - {{ heroe }}
+    </li>
+</ul>
+
+<div>
+    <h3>Heroe Eliminado</h3>
+    <span>{{ deletedHero }}</span>
+</div>
+
+<button (click)="DeleteHero()">
+    Eliminar Heroe
+</button>

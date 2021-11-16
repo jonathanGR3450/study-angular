@@ -16,6 +16,7 @@ import { ListadoComponent } from "./listado/listado.component";
     // los exports son los componentes que voy a mostrar
     exports: [
         ListadoComponent,
+        HeroeComponent
     ]
 })
 export class HeroesModule {

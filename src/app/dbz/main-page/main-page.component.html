@@ -1,1 +1,19 @@
-<p>main-page works!</p>
+<h1>Dragon Ball Z</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-personajes [personajes]="personajes"></app-personajes>
+    </div>
+    <div class="col">
+        <h3>Agregar</h3>
+        <hr>
+        <form (ngSubmit)="send()">
+            <input type="text" name="name" id="name" placeholder="Nombres" [(ngModel)]="nuevo.name">
+            <input type="number" name="power" id="power" placeholder="Poder" [(ngModel)]="nuevo.power">
+            <button type="submit">
+                Agregar
+            </button>
+        </form>
+    </div>
+</div>

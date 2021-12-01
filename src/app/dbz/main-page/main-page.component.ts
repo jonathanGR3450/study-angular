@@ -8,21 +8,11 @@ import { dbzService } from '../services/dbz.service';
   templateUrl: './main-page.component.html',
 })
 export class MainPageComponent {
-
-  constructor( private dbzService: dbzService) {}
-
-  personajes: Personaje[] = [
-    {
-      name: 'Pikoro',
-      power: 700
-    },
-    {
-      name: 'Goku',
-      power: 1700
-    },
-  ];
-
-  addNewPersonaje(personaje: Personaje){
-    this.personajes.push(personaje);
+  // personajes: Personaje[] = [];
+  constructor( private dbzService: dbzService) {
+    // this.personajes = this.dbzService.personajes;
+  }
+  get personajes(): Personaje[]{
+    return this.dbzService.personajes;
   }
 }

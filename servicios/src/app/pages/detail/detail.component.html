@@ -1,0 +1,9 @@
+<div class="mb-3 card text-white bg-primary">
+    <div class="card-header">{{ character.name }}</div>
+    <div class="card-body">
+        <ul *ngFor="let film of character.films">
+            <li>{{ film }}</li>
+        </ul>
+    </div>
+    <div class="card-footer">{{ character.created | date }}</div>
+</div>

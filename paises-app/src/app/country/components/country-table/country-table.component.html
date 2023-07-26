@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th> # </th>
+            <th> Nombre </th>
+            <th> Capital </th>
+            <th> Region </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of results; let i = index;">
+            <td>{{ i + 1 }}</td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
+            <td>{{ country.region }}</td>
+            <td>
+                <a [routerLink]="['/country', country.alpha2Code]"  >Ver Mas...</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

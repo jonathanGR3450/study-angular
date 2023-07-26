@@ -1,0 +1,41 @@
+version: '3.6'
+
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    expose:
+      - 4200
+    container_name: front
+    volumes:
+      - ./app:/app
+      - ./app/node_modules:/app/node_modules
+    networks:
+      - angular-network
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    restart: unless-stopped
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - front
+    ports:
+      - "8080:8080"
+    networks:
+      - angular-network
+
+#Docker Networks
+networks:
+  angular-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local

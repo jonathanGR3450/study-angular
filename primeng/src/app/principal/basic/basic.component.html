@@ -1,0 +1,30 @@
+<br>
+<div class="formgroup-inline">
+    <form (ngSubmit) = "send(form)" #form="ngForm">
+        <div class="field">
+            <label for="name" class="p-sr-only">Name</label>
+            <input [(ngModel)]="user"
+            #userL="ngModel"
+            pattern="(?=.*[A-Za-z]).{2,10}"
+            required
+            name="userL" pInputText id="name" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+            placeholder="Name">
+            <small *ngIf="!userL.valid && userL.touched" id="username2-help" class="p-error block">Name is not available.</small>
+            <small *ngIf="userL.errors?.['required'] && userL.touched" id="username2-help" class="p-error block">pleace complete name field </small>
+        </div>
+        <div class="field">
+            <label for="password" class="p-sr-only">Password</label>
+            <input [(ngModel)]="password"
+            #passwordL="ngModel"
+            required
+            name="password"
+            pInputText
+            id="password"
+            type="password"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary" 
+            placeholder="Password">
+            <small *ngIf="passwordL.errors?.['required'] && passwordL.touched" id="username2-help" class="p-error block">Password complete name field </small>
+        </div>
+        <button type="submit" class="text-white bg-primary-500 border-primary-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">Submit</button>
+    </form>
+</div>

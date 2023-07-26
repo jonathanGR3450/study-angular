@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/vela-orange/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeflex/primeflex.css";
+
+html {
+    height: 100%;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+body {
+    background-color: var(--surface-b);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}

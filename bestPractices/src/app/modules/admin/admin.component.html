@@ -1,0 +1,10 @@
+<p>admin works!</p>
+
+<ul>
+    <li *ngFor="let number of numbers; let i=index;trackBy:trackByItems">{{ i }} - {{ number }}</li>
+</ul>
+<button (click)="addNumber()">add</button>
+
+<h1>Newsletters</h1>
+<app-newsletter></app-newsletter>
+<button (click)="updateUser()">Change name user</button>
